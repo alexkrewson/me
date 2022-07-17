@@ -8,6 +8,10 @@ $backgroundColor: teal;
     max-width: 100%
 }
 
+#root {
+    height: 100%
+}
+
 html,
 body {
     margin: 0 0 0 0;
@@ -31,6 +35,9 @@ a {
 .gridContainer {
     display: grid;
     gap: 10px;
+    height: 100%;
+    
+
     grid-template-areas:
         "header"
         "nav"
@@ -77,6 +84,8 @@ a {
 .sidebar {
     grid-area: sidebar;
     height: 100%;
+    overflow: auto;
+    // position: sticky;
 }
 
 // .sidebarFixed {
