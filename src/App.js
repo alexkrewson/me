@@ -2,6 +2,7 @@ import TodoList from './TodoList'
 import '../src/sassystyle.scss';
 import React, { useState, useRef, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import me from './me.jpg';
 
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
@@ -52,8 +53,37 @@ function App() {
       <button onClick={handleClearTodos}>Clear Complete</button>
       <div>{todos.filter(todo => !todo.complete).length}</div> */}
       <div className="gridContainer">
-        <div className="sidebar">I'm a sidebar div</div>
-        <div className="content">I'm the main content div</div>
+        <div className="sidebar">
+            <img src={me} alt="" />
+            <a href="#about">about</a>
+            <a href="#projects">projects</a>
+            <a href="#ghMetrics">github metrics</a>
+            <a href="#resume">resume</a>
+          {/* <div className="sidebarFixed">
+          </div> */}
+        </div>
+        <div className="content">
+          <div className="contentSections" id="about">
+            <h1>About Me</h1>
+            Please hire me I want your monies! Please hire me I want your monies! Please hire me I want your monies! Please hire me I want your monies! Please hire me I want your monies! Please hire me I want your monies! Please hire me I want your monies! Please hire me I want your monies!
+            
+          </div>
+          <div className="contentSections" id="projects">
+            <h1>Projects</h1>
+            Ad inventore distinctio aut quibusdam eveniet rem dignissimos doloribus qui voluptatum asperiores in corrupti libero vel quia optio. Ut optio asperiores est perspiciatis dignissimos ad architecto dolor. Ad incidunt aspernatur et ullam dolores eum labore dicta.
+          </div>
+          <div className="contentSections" id="ghMetrics">
+            <h1>Github Metrics</h1>
+            Ut odio illum et itaque autem id officiis ipsa est culpa magni. A sint eius est dolorem consequatur ut harum iure et incidunt sequi non error debitis ut iure illo in sunt ipsam.
+          </div>
+          <div className="contentSections" id="resume">
+            <h1>Resume</h1>
+            Quo tempora nostrum et debitis mollitia eos aliquam doloribus ut amet eius. Ut amet laboriosam sit soluta facilis et reprehenderit animi vel velit galisum quo libero odit ea minima ipsum. Et mollitia iure sit iusto similique qui molestias est veniam sed quae repellat.
+          </div>
+
+
+
+        </div>
       </div>
 
     </>
