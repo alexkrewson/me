@@ -1,11 +1,50 @@
 $backgroundColor: teal;
+$textColor: rgb(24, 21, 21);
 
-* {
-    // border: 1px solid black;
+// * {
+//     // border: 1px solid black;
+// }
+
+.project-row {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+        width: 120px;
+        min-width: 106px;
+    }
+
+
+}
+
+.button {
+    // display: block;
+    width: 115px;
+    min-width: 100px;
+    height: 25px;
+    background: #71949c;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: $textColor;
+    // font-weight: bold;
+    line-height: 25px;
+
+    &:hover {
+        background: #4d686e;
+
+    }
+
 }
 
 .sidebar img {
-    max-width: 100%
+    max-width: 90%;
+    margin: 10px 10px 10px 10px;
+    // padding: 10px 10px 10px 10px;
+
+ 
 }
 
 #root {
@@ -15,7 +54,7 @@ $backgroundColor: teal;
 html,
 body {
     margin: 0 0 0 0;
-    color: rgb(24, 21, 21);
+    color: $textColor;
     background-color: $backgroundColor;
     height: 100%;
     width: 100%;
@@ -24,7 +63,7 @@ body {
 
 a {
     display: block;
-    margin-top: 20px;
+    // margin-top: 20px;
     color: rgb(0, 34, 34);
 }
 
@@ -34,9 +73,9 @@ a {
 
 .gridContainer {
     display: grid;
-    gap: 10px;
+    gap: 20px;
     height: 100%;
-    
+
 
     grid-template-areas:
         "header"
@@ -52,50 +91,54 @@ a {
     .gridContainer {
         grid-template-columns: 1fr 3fr;
         grid-template-areas:
-            "header  header"
-            "nav     nav"
             "sidebar content"
             "ad      footer";
     }
 
-    nav ul {
-        display: flex;
-        justify-content: space-between;
-    }
 }
 
-@media (min-width: 700px) {
-    .wrapper {
-        grid-template-columns: 1fr 4fr 1fr;
-        grid-template-areas:
-            "header header  header"
-            "nav    content sidebar"
-            "nav    content ad"
-            "footer footer  footer"
-    }
+// @media (min-width: 700px) {
+//     .wrapper {
+//         grid-template-columns: 1fr 4fr 1fr;
+//         grid-template-areas:
+//             "header header  header"
+//             "nav    content sidebar"
+//             "nav    content ad"
+//             "footer footer  footer"
+//     }
 
-    nav ul {
-        flex-direction: column;
-    }
-}
-
+//     nav ul {
+//         flex-direction: column;
+//     }
+// }
 
 
 .sidebar {
+    position: relative;
     grid-area: sidebar;
     height: 100%;
     overflow: auto;
+    top: 5px;
+
+    a {
+        margin-top: 20px;
+        margin-left: 10px;
+
+    }
+
     // position: sticky;
 }
 
-// .sidebarFixed {
-//     height: 100%;
-//     overflow: auto;
-// }
 
 .content {
     grid-area: content;
     height: 100%;
     overflow: auto;
+    margin-top: 10px;
+    padding-right: 10px;
+
+    h1{
+        margin-top: 0px;
+    }
 
 }
