@@ -3,6 +3,7 @@ import '../src/sassystyle.scss';
 import React, { useState, useRef, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import me from './me2.jpg';
+import resumePDF from './Resume.pdf';
 
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
@@ -96,7 +97,7 @@ function App() {
           </div>
           <div className="contentSections" id="resume">
             <h1>Resume</h1>
-            Quo tempora nostrum et debitis mollitia eos aliquam doloribus ut amet eius. Ut amet laboriosam sit soluta facilis et reprehenderit animi vel velit galisum quo libero odit ea minima ipsum. Et mollitia iure sit iusto similique qui molestias est veniam sed quae repellat.
+            <iframe src={resumePDF} height="100%" width="90%"></iframe>
           </div>
 
 
