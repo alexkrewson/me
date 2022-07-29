@@ -10,7 +10,8 @@ $textColor: rgb(24, 21, 21);
 }
 
 .project-row {
-    width: 60%;
+    width: 450px;
+    min-width: 300px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,6 +22,13 @@ $textColor: rgb(24, 21, 21);
     }
 
 
+}
+
+.row-buttons {
+    display: flex;
+    width: 50%;
+    min-width: 280px;
+    justify-content: space-between;
 }
 
 .button {

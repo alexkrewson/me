@@ -1,4 +1,6 @@
 import TodoList from './TodoList'
+import LoadJSON from './LoadJSON'
+
 import '../src/sassystyle.scss';
 import React, { useState, useRef, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
@@ -45,6 +47,25 @@ function App() {
     setTodos(newTodos)
   }
 
+  const [thisIsMyCopy, setThisIsMyCopy] = useState({})
+
+
+  
+  useEffect (() => {
+    async function fetchData() {
+
+      const thisIsMyCopy2 = await LoadJSON()
+
+      setThisIsMyCopy(thisIsMyCopy2)  
+
+      // console.log(thisIsMyCopy2)
+    }
+    fetchData()
+
+    // console.log(thing)
+  }, [])
+
+
 
   return (
     <>
@@ -75,25 +96,33 @@ function App() {
             {/* Ad inventore distinctio aut quibusdam eveniet rem dignissimos doloribus qui voluptatum asperiores in corrupti libero vel quia optio. Ut optio asperiores est perspiciatis dignissimos ad architecto dolor. Ad incidunt aspernatur et ullam dolores eum labore dicta. */}
             <div className='project-row'>
               <p>Weather App</p>
-              <a href="https://alexkrewson.github.io/weather/dist/index.html" className='button' target="_blank">live preview</a>
-              <a href="https://github.com/alexkrewson/portfolio/tree/main/weather" className='button' target="_blank">view code</a>
+              <div className="row-buttons">
+                <a href="https://alexkrewson.github.io/weather/dist/index.html" className='button' target="_blank">live preview</a>
+                <a href="https://github.com/alexkrewson/portfolio/tree/main/weather" className='button' target="_blank">view code</a>
+              </div>
             </div>
 
             <div className='project-row'>
               <p>Todo List</p>
-              <a href="https://alexkrewson.github.io/todolist/dist/index.html" className='button' target="_blank">live preview</a>
-              <a href="https://github.com/alexkrewson/portfolio/tree/main/todo" className='button' target="_blank">view code</a>
+              <div className="row-buttons">
+                <a href="https://alexkrewson.github.io/todolist/dist/index.html" className='button' target="_blank">live preview</a>
+                <a href="https://github.com/alexkrewson/portfolio/tree/main/todo" className='button' target="_blank">view code</a>
+              </div>
             </div>
             <div className='project-row'>
               <p>Weather App</p>
-              <a href="https://arcane-inlet-56598.herokuapp.com/" className='button' target="_blank">live preview</a>
-              <a href="https://github.com/alexkrewson/portfolio/tree/main/fb" className='button' target="_blank">view code</a>
+              <div className="row-buttons">
+                <a href="https://arcane-inlet-56598.herokuapp.com/" className='button' target="_blank">live preview</a>
+                <a href="https://github.com/alexkrewson/portfolio/tree/main/fb" className='button' target="_blank">view code</a>
+              </div>
             </div>
 
           </div>
           <div className="contentSections" id="ghMetrics">
             <h1>Github Metrics</h1>
-            Ut odio illum et itaque autem id officiis ipsa est culpa magni. A sint eius est dolorem consequatur ut harum iure et incidunt sequi non error debitis ut iure illo in sunt ipsam.
+            {/* <div dangerouslySetInnerHTML={{ __html: thisIsMyCopy }}></div> */}
+            {JSON.stringify(thisIsMyCopy)}
+            {/* Ut odio illum et itaque autem id officiis ipsa est culpa magni. A sint eius est dolorem consequatur ut harum iure et incidunt sequi non error debitis ut iure illo in sunt ipsam. */}
           </div>
           <div className="contentSections" id="resume">
             <h1>Resume</h1>
