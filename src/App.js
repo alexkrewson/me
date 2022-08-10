@@ -1,4 +1,3 @@
-import TodoList from './TodoList'
 import LoadJSON from './LoadJSON'
 
 import '../src/sassystyle.scss';
@@ -93,8 +92,12 @@ function App() {
                 <h3>CSS</h3>
                 <p>{githubMetricsOutput.CSS}</p>
               </div>
+              <div className="ghMetricsLanguageSubContainer">
+                <h3>Sass</h3>
+                <p>{githubMetricsOutput.Sass}</p>
+              </div>
             </div>
-              <p id="footnote">*Powered by Github API</p>
+              <p id="footnote">{githubMetricsOutput.message}</p>
           </div>
           <div className="contentSections" id="resume">
             <h1>Resume</h1>
