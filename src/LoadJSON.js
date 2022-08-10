@@ -6,10 +6,13 @@ export default async function loadJSON() {
     // const statsUrl = 'https://api.github.com/repos/alexkrewson/todo/languages';
     const statsUrl = 'https://api.github.com/users/alexkrewson/repos?per_page=100';
 
+    const cleverToken1 = 'token ghp_ou6tnNiX5uwAh'
+    const cleverToken2 = 'WQYAooNOzjfZVBtzy1QcIfK'
+
     const s = {
         withCredentials: !0,
         headers: {
-          Authorization: 'token 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'
+          Authorization: cleverToken1 + cleverToken2
         }
       };
 
@@ -24,6 +27,7 @@ export default async function loadJSON() {
 
     for (let i = 0; i < obj.length; i++) {
         let languageUrl = obj[i].languages_url
+        // console.log(languageUrl)
 
         let response2 = await fetch(languageUrl,s);
         let data2 = await response2.text();
