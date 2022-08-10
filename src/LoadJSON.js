@@ -23,7 +23,7 @@ export default async function loadJSON() {
     console.log(obj)
 
     let obj2 = []
-    let languageTallies = {Javascript: 0, Ruby: 0, HTML: 0, CSS: 0, Sass: 0}
+    let languageTallies = {JavaScript: 0, Ruby: 0, HTML: 0, CSS: 0, Sass: 0}
 
     for (let i = 0; i < obj.length; i++) {
         let languageUrl = obj[i].languages_url
@@ -34,7 +34,7 @@ export default async function loadJSON() {
         obj2[i] = await JSON.parse(data2);
 
         if (obj2[i].JavaScript > 0) {
-            languageTallies.Javascript ++
+            languageTallies.JavaScript ++
         }
         if (obj2[i].Ruby > 0) {
             languageTallies.Ruby ++

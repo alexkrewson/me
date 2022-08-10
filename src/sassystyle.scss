@@ -1,26 +1,53 @@
-$backgroundColor: teal;
+$backgroundColor: rgb(220, 243, 243);
 $textColor: rgb(24, 21, 21);
-
-// * {
-//     // border: 1px solid black;
-// }
 
 #resume {
     height: 1200px;
+}
+
+#footnote {
+    text-align: center;
+}
+
+.ghMetricsLanguageContainer {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.ghMetricsLanguageSubContainer {
+    p {
+        font-weight: 600;
+        font-size: 2em;
+        text-align: center;
+
+    }
 }
 
 .project-row {
     width: 450px;
     min-width: 300px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    background-color: white;
+    flex-direction: column;
+    align-items: start;
 
     p {
-        width: 120px;
+        display: block;
         min-width: 106px;
     }
 
+    h2 {
+        margin-bottom: 0px;
+    }
 
 }
 
@@ -29,10 +56,10 @@ $textColor: rgb(24, 21, 21);
     width: 50%;
     min-width: 280px;
     justify-content: space-between;
+    margin-top: 5px;
 }
 
 .button {
-    // display: block;
     width: 115px;
     min-width: 100px;
     height: 25px;
@@ -41,7 +68,6 @@ $textColor: rgb(24, 21, 21);
     text-align: center;
     border-radius: 5px;
     color: $textColor;
-    // font-weight: bold;
     line-height: 25px;
 
     &:hover {
@@ -54,9 +80,7 @@ $textColor: rgb(24, 21, 21);
 .sidebar img {
     max-width: 90%;
     margin: 10px 10px 10px 10px;
-    // padding: 10px 10px 10px 10px;
 
- 
 }
 
 #root {
@@ -71,16 +95,16 @@ body {
     height: 100%;
     width: 100%;
     overflow: auto;
+    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 a {
     display: block;
-    // margin-top: 20px;
     color: rgb(0, 34, 34);
 }
 
 .contentSections {
-    margin-bottom: 200px;
+    margin-bottom: 75px;
 }
 
 .gridContainer {
@@ -92,8 +116,8 @@ a {
     grid-template-areas:
         "header"
         "nav"
-        "content"
         "sidebar"
+        "content"
         "ad"
         "footer";
 
@@ -109,22 +133,6 @@ a {
 
 }
 
-// @media (min-width: 700px) {
-//     .wrapper {
-//         grid-template-columns: 1fr 4fr 1fr;
-//         grid-template-areas:
-//             "header header  header"
-//             "nav    content sidebar"
-//             "nav    content ad"
-//             "footer footer  footer"
-//     }
-
-//     nav ul {
-//         flex-direction: column;
-//     }
-// }
-
-
 .sidebar {
     position: relative;
     grid-area: sidebar;
@@ -137,8 +145,6 @@ a {
         margin-left: 10px;
 
     }
-
-    // position: sticky;
 }
 
 
@@ -149,7 +155,7 @@ a {
     margin-top: 10px;
     padding-right: 10px;
 
-    h1{
+    h1 {
         margin-top: 0px;
     }
 

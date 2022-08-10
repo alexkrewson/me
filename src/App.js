@@ -11,53 +11,16 @@ import resumePDF from './Resume.pdf';
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
 function App() {
-  // const [todos, setTodos] = useState([])
-  // const todoNameRef = useRef()
 
-  // useEffect(() => {
-  //   const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-  //   if (storedTodos) setTodos(storedTodos)
-  // }, [])
+  const [githubMetricsOutput, setGithubMetricsOutput] = useState({})
 
-  // useEffect(() => {
-  //   // console.log(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)))
-  //   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
-  //   // console.log('working?')
-  // }, [todos])
-
-  // function toggleTodo(id) {
-  //   const newTodos = [...todos]
-  //   const todo = newTodos.find(todo => todo.id === id)
-  //   todo.complete = !todo.complete
-  //   setTodos(newTodos)
-  // }
-
-  // function handleAddTodo(e) {
-  //   const name = todoNameRef.current.value
-  //   if (name === '') return
-  //   setTodos(prevTodos => {
-  //     console.log('setTodos is working')
-  //     return [...prevTodos, { id: uuidv4(), name: name, complete: false }]
-  //   })
-  //   todoNameRef.current.value = null
-  // }
-
-  // function handleClearTodos() {
-  //   const newTodos = todos.filter(todo => !todo.complete)
-  //   setTodos(newTodos)
-  // }
-
-  const [thisIsMyCopy, setThisIsMyCopy] = useState({})
-
-
-  
-  useEffect (() => {
+  useEffect(() => {
 
     async function fetchData() {
-      const thisIsMyCopy2 = await LoadJSON()
-      setThisIsMyCopy(thisIsMyCopy2)
+      const githubMetricsOutput2 = await LoadJSON()
+      setGithubMetricsOutput(githubMetricsOutput2)
     }
-    
+
     fetchData()
   }, [])
 
@@ -65,11 +28,7 @@ function App() {
 
   return (
     <>
-      {/* <TodoList todos={todos} toggleTodo={toggleTodo}/>
-      <input ref={todoNameRef} type="text" />
-      <button onClick={handleAddTodo}>Add Todo</button>
-      <button onClick={handleClearTodos}>Clear Complete</button>
-      <div>{todos.filter(todo => !todo.complete).length}</div> */}
+
       <div className="gridContainer">
         {/* <div className="header"></div> */}
         <div className="sidebar">
@@ -78,8 +37,6 @@ function App() {
           <a href="#projects">projects</a>
           <a href="#ghMetrics">github metrics</a>
           <a href="#resume">resume</a>
-          {/* <div className="sidebarFixed">
-          </div> */}
         </div>
         <div className="content">
           <div className="contentSections" id="about">
@@ -89,9 +46,9 @@ function App() {
           </div>
           <div className="contentSections" id="projects">
             <h1>Projects</h1>
-            {/* Ad inventore distinctio aut quibusdam eveniet rem dignissimos doloribus qui voluptatum asperiores in corrupti libero vel quia optio. Ut optio asperiores est perspiciatis dignissimos ad architecto dolor. Ad incidunt aspernatur et ullam dolores eum labore dicta. */}
             <div className='project-row'>
-              <p>Weather App</p>
+              <h2>Weather App</h2>
+              <p>Current weather and relevant gif using OpenWeatherMap API</p>
               <div className="row-buttons">
                 <a href="https://alexkrewson.github.io/weather/dist/index.html" className='button' target="_blank">live preview</a>
                 <a href="https://github.com/alexkrewson/portfolio/tree/main/weather" className='button' target="_blank">view code</a>
@@ -99,14 +56,16 @@ function App() {
             </div>
 
             <div className='project-row'>
-              <p>Todo List</p>
+              <h2>Todo List</h2>
+              <p>Task list and project organizer with tabs made of CSS trapezoids</p>
               <div className="row-buttons">
                 <a href="https://alexkrewson.github.io/todolist/dist/index.html" className='button' target="_blank">live preview</a>
                 <a href="https://github.com/alexkrewson/portfolio/tree/main/todo" className='button' target="_blank">view code</a>
               </div>
             </div>
             <div className='project-row'>
-              <p>Weather App</p>
+              <h2>Facebook Clone</h2>
+              <p>Clone of Facebook built with a Ruby backend and deployed on Heroku</p>
               <div className="row-buttons">
                 <a href="https://arcane-inlet-56598.herokuapp.com/" className='button' target="_blank">live preview</a>
                 <a href="https://github.com/alexkrewson/portfolio/tree/main/fb" className='button' target="_blank">view code</a>
@@ -116,9 +75,26 @@ function App() {
           </div>
           <div className="contentSections" id="ghMetrics">
             <h1>Github Metrics</h1>
-            {/* <div dangerouslySetInnerHTML={{ __html: thisIsMyCopy }}></div> */}
-            {JSON.stringify(thisIsMyCopy)}
-            {/* Ut odio illum et itaque autem id officiis ipsa est culpa magni. A sint eius est dolorem consequatur ut harum iure et incidunt sequi non error debitis ut iure illo in sunt ipsam. */}
+            <p>Technologies and the numbers of times I've used them in projects</p>
+            <div className="ghMetricsLanguageContainer">
+              <div className="ghMetricsLanguageSubContainer">
+                <h3>Ruby</h3>
+                <p>{githubMetricsOutput.Ruby}</p>
+              </div>
+              <div className="ghMetricsLanguageSubContainer">
+                <h3>JavaScript</h3>
+                <p>{githubMetricsOutput.JavaScript}</p>
+              </div>
+              <div className="ghMetricsLanguageSubContainer">
+                <h3>HTML</h3>
+                <p>{githubMetricsOutput.HTML}</p>
+              </div>
+              <div className="ghMetricsLanguageSubContainer">
+                <h3>CSS</h3>
+                <p>{githubMetricsOutput.CSS}</p>
+              </div>
+            </div>
+              <p id="footnote">*Powered by Github API</p>
           </div>
           <div className="contentSections" id="resume">
             <h1>Resume</h1>
