@@ -49,7 +49,7 @@ function App() {
               <h2>Weather App</h2>
               <p>Current weather and relevant gif using OpenWeatherMap API</p>
               <div className="row-buttons">
-                <a href="https://alexkrewson.github.io/weather/dist/index.html" className='button' target="_blank">live preview</a>
+                <a href="https://alexkrewson.github.io/weather" className='button' target="_blank">live preview</a>
                 <a href="https://github.com/alexkrewson/portfolio/tree/main/weather" className='button' target="_blank">view code</a>
               </div>
             </div>
