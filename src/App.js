@@ -50,7 +50,7 @@ function App() {
               <p>Current weather and relevant gif using OpenWeatherMap API</p>
               <div className="row-buttons">
                 <a href="https://alexkrewson.github.io/weather" className='button' target="_blank">live preview</a>
-                <a href="https://github.com/alexkrewson/portfolio/tree/main/weather" className='button' target="_blank">view code</a>
+                <a href="https://github.com/alexkrewson/weather/tree/main" className='button' target="_blank">view code</a>
               </div>
             </div>
 
@@ -58,8 +58,8 @@ function App() {
               <h2>Todo List</h2>
               <p>Task list and project organizer with tabs made of CSS trapezoids</p>
               <div className="row-buttons">
-                <a href="https://alexkrewson.github.io/todolist/dist/index.html" className='button' target="_blank">live preview</a>
-                <a href="https://github.com/alexkrewson/portfolio/tree/main/todo" className='button' target="_blank">view code</a>
+                <a href="https://alexkrewson.github.io/todo/" className='button' target="_blank">live preview</a>
+                <a href="https://github.com/alexkrewson/todo" className='button' target="_blank">view code</a>
               </div>
             </div>
             <div className='project-row'>
